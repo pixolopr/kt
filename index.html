@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="http://pluton.themeart.co/xmlrpc.php">
+    <script src="lib/js/angular-route.min.js"></script>
+    <script src="lib/js/angular.min.js"></script>
+    <script src="lib/js/jquery-1.11.1.min.js"></script>
+    <script src="lib/js/angular-animate.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
 
-    <title>TA Pluton Demo | Just another ThemeArt theme demo site</title>
+    <title>KT Eventz</title>
     <meta name='robots' content='noindex,follow' />
-    <link rel="alternate" type="text/css" href="style.css" />
+    <link rel="alternate" type="text/css" href="style1.css" />
     <link rel="alternate" type="application/rss+xml" title="TA Pluton Demo &raquo; Comments Feed" href="http://pluton.themeart.co/comments/feed/" />
     <link rel="alternate" type="application/rss+xml" title="TA Pluton Demo &raquo; HomePage Comments Feed" href="http://pluton.themeart.co/homepage/feed/" />
     <script type="text/javascript">
@@ -62,9 +68,12 @@
     <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css' />
     <link rel='stylesheet' type='text/css' href='css/jquery.bxslider.css' />
     <link rel='stylesheet' type='text/css' href='css/jquery.cslider.css' />
+    <link rel='stylesheet' type='text/css' href='css/font-awesome.min.css' />
     <link rel='stylesheet' type='text/css' href='css/pluton.css' />
+    <link rel='stylesheet' type='text/css' href='style1.css' />
+    
     <link rel='stylesheet' id='Google-font-css' href='http://fonts.googleapis.com/css?family=Roboto%3A400%2C300%2C700&#038;subset=latin%2Clatin-ext&#038;ver=4.2.2' type='text/css' media='all' />
-    <link rel='stylesheet' type='text/css' href='style.css' />
+   
     <script type='text/javascript' src='jquery/comment-reply.min.js'></script>
     <script type='text/javascript' src='jquery/jquery-migrate.min.js'></script>
     <script type='text/javascript' src='jquery/jquery.js'></script>
@@ -93,16 +102,7 @@
     <!-- Custom CSS -->
     <style type="text/css">
         .da-slider {
-            background: transparent url(http://pluton.themeart.co/wp-content/uploads/2015/01/slider.jpg) repeat-x 0% center;
-        }
-        
-        .client-bg {
-            background: url(http://pluton.themeart.co/wp-content/uploads/2015/01/brand-bg.png) no-repeat center;
-        }
-        
-        .newsletter-bg {
-            background: url(http://pluton.themeart.co/wp-content/uploads/2015/01/brand-bg.png) no-repeat center;
-        }
+            background: transparent url(http://pluton.themeart.co/wp-content/uploads/2015/01/slider.jpg) repeat-x 0% center;}.client-bg {background: url(http://pluton.themeart.co/wp-content/uploads/2015/01/brand-bg.png) no-repeat center;}.newsletter-bg {background: url(http://pluton.themeart.co/wp-content/uploads/2015/01/brand-bg.png) no-repeat center;}
     </style>
     <style type="text/css">
         .recentcomments a {
@@ -111,10 +111,6 @@
             margin: 0 !important;
         }
     </style>
-    <script src="lib/js/angular-route.min.js"></script>
-    <script src="lib/js/angular.min.js"></script>
-    <script src="app.js"></script>
-    <script src="controllers.js"></script>
 </head>
 
 <body class="home page page-id-1364 page-template page-template-template-home page-template-template-home-php group-blog" ng-app="myWeb" ng-controller="urCtrl">
@@ -126,7 +122,8 @@
                     <div class="container">
                         <div class="navbar-header">
                             <!-- This is website logo -->
-                            <a class="navbar-brand" href="http://pluton.themeart.co/" title="TA Pluton Demo" rel="homepage"><img class="logo" src="http://pluton.themeart.co/wp-content/themes/ta-pluton/images/logo.png" width="120" height="40" alt="logo">
+                            <a class="navbar-brand" href="http://pluton.themeart.co/" title="TA Pluton Demo" rel="homepage">
+                                <img class="logo" src="http://pluton.themeart.co/wp-content/themes/ta-pluton/images/logo.png" width="120" height="40" alt="logo">
                             </a>
 
                             <!-- Navigation button, visible on small resolution -->
@@ -174,7 +171,7 @@
                     <div class="container">
                         <!-- Loop slide -->
                         <div class="da-slide">
-                            <h2 class="fittext2">WELCOME TO PLUTON</h2>
+                            <h2 class="fittext2">{{name}}</h2>
                             <h4>THEMECLEAN & RESPONSIVE</h4>
                             <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
                             <a href="http://themeart.co/" class="da-link button">Learn More</a>
@@ -203,7 +200,7 @@
                         <!-- End loop slide -->
                         <!-- Start cSlide navigation arrows -->
                         <div class="da-arrows">
-                            <span class="da-arrows-prev"></span>
+                            <span class="da-arrows-prev"> </span>
                             <span class="da-arrows-next"></span>
                         </div>
                         <!-- End cSlide navigation arrows -->
@@ -211,27 +208,919 @@
                 </div>
             </div>
             <!-- End home section -->
-            <div ng-include="'template/services.html'"></div>
-            <div ng-include="'template/portfolio.html'"></div>
-            <div ng-include="'template/about.html'"></div>
-            <div ng-include="'template/callsto.html'"></div>
-            <div ng-include="'template/client.html'"></div>
-            <div ng-include="'template/blog.html'"></div>
-            <div ng-include="'template/newsletter.html'"></div>
-            <div ng-include="'template/contact.html'"></div>
+
+            <!-- Service section start -->
+            <div class="section primary-section" id="service">
+                <div class="container">
+                    <!-- Start title section -->
+                    <div class="title">
+                        <h1>What We Do?</h1>
+                        <!-- Section's title goes here -->
+                        <p>Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.</p>
+                        <!--Simple description for section goes here. -->
+                    </div>
+                    <div class="row">
+                        <!-- Loop slide -->
+                        <div class="col-md-4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="img/Service1.png" alt="service box">
+                                </div>
+                                <h3>Modern Design</h3>
+                                <p>We Create Modern And Clean Theme For Your Business Company.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="img/Service2.png" alt="service box">
+                                </div>
+                                <h3>Powerfull Theme</h3>
+                                <p>We Create Modern And Powerful Theme With Lots Animation And Features.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="img/Serv2ice3.png" alt="service box">
+                                </div>
+                                <h3>Clean Code</h3>
+                                <p>We Create Modern And Powerful Html5 And CSS3 Code Easy For Read And Customize.</p>
+                            </div>
+                        </div>
+                        <!-- End loop slide -->
+                    </div>
+                </div>
+            </div>
+            <!-- Service section end -->
+
+            <!-- Portfolio section start -->
+            <div class="section secondary-section " id="portfolio">
+                <div class="triangle"></div>
+                <div class="container">
+                    <div class="title">
+                        <h1>Have You Seen our Works?</h1>
+                        <p>Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.</p>
+                    </div>
+
+                    <!-- Portfolio filter -->
+
+                    <ul class="nav nav-pills">
+                        <li class="filter" data-filter="all">
+                            <a href="#all">All</a>
+                        </li>
+                        <li class="filter" data-filter="identity"><a href="#identity">Identity</a>
+                        </li>
+                        <li class="filter" data-filter="photo"><a href="#photo">Photo</a>
+                        </li>
+                        <li class="filter" data-filter="web"><a href="#web">Web</a>
+                        </li>
+                    </ul>
+
+                    <!-- Start details for portfolio project -->
+                    <div id="single-project">
+
+
+                        <!-- the loop -->
+
+                        <div id="slidingDiv1411" class="toggleDiv single-project">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="img/portfolio1.jpg">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="project-description">
+                                            <div class="project-title clearfix">
+                                                <h3>Realistic Character 9</h3>
+                                                <span class="show_hide close">
+											<i class="icon-cancel"></i>
+										</span>
+                                            </div>
+                                            <div class="project-info">
+                                                <div><span>Client</span>ThemeArt</div>
+                                                <div><span>Date</span>January 21, 2015</div>
+                                                <div><span>Categories</span>Identity / Photo</div>
+
+                                            </div>
+                                            <p>I learned that we can do anything, but we can&#8217;t doeverything&#8230; at least not at the same time. So think of your priorities not in terms of what activities you do, but when you do them. Timing is everything.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End details for portfolio project -->
+
+
+                        <div id="slidingDiv1409" class="toggleDiv single-project">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="img/portfolio1.jpg" alt="project">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="project-description">
+                                            <div class="project-title clearfix">
+                                                <h3>Realistic Character 8</h3>
+                                                <span class="show_hide close">
+											<i class="icon-cancel"></i>
+										</span>
+                                            </div>
+                                            <div class="project-info">
+                                                <div><span>Client</span>ThemeArt</div>
+                                                <div><span>Date</span>January 21, 2015</div>
+                                                <div><span>Categories</span>Photo / Web</div>
+                                                <div><span>Link</span><a href="http://themeart.co/">http://themeart.co/</a>
+                                                </div>
+                                            </div>
+                                            <p>What if you gave someone a gift, and they neglected tothank you for it &#8211; would you be likely to give them another? Life is the same way. In order to attract more of the blessings that life has to offer, you must truly appreciate what you already have.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End details for portfolio project -->
+
+
+                        <div id="slidingDiv1407" class="toggleDiv single-project">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="img/Portfolio09.png" alt="project">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="project-description">
+                                            <div class="project-title clearfix">
+                                                <h3>Realistic Character 7</h3>
+                                                <span class="show_hide close">
+											<i class="icon-cancel"></i>
+										</span>
+                                            </div>
+                                            <div class="project-info">
+                                                <div><span>Client</span>ThemeArt</div>
+                                                <div><span>Date</span>January 21, 2015</div>
+                                                <div><span>Categories</span>Identity / Photo / Web</div>
+                                                <div><span>Link</span><a href="http://themeart.co/">http://themeart.co/</a>
+                                                </div>
+                                            </div>
+                                            <p>Always continue the climb. It is possible for you to dowhatever you choose, if you first get to know who you are and are willing to work with a power that is greater than ourselves to do it.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End details for portfolio project -->
+
+
+                        <div id="slidingDiv1405" class="toggleDiv single-project">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/Portfolio06.png" alt="project">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="project-description">
+                                            <div class="project-title clearfix">
+                                                <h3>Realistic Character 6</h3>
+                                                <span class="show_hide close">
+											<i class="icon-cancel"></i>
+										</span>
+                                            </div>
+                                            <div class="project-info">
+                                                <div><span>Client</span>ThemeArt</div>
+                                                <div><span>Date</span>January 21, 2015</div>
+                                                <div><span>Categories</span>Photo / Web</div>
+                                                <div><span>Link</span><a href="http://themeart.co/">http://themeart.co/</a>
+                                                </div>
+                                            </div>
+                                            <p>I went to the woods because I wished to live deliberately,to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End details for portfolio project -->
+
+
+                        <div id="slidingDiv1403" class="toggleDiv single-project">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/Portfolio05.png" alt="project">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="project-description">
+                                            <div class="project-title clearfix">
+                                                <h3>Realistic Character 5</h3>
+                                                <span class="show_hide close">
+											<i class="icon-cancel"></i>
+										</span>
+                                            </div>
+                                            <div class="project-info">
+                                                <div><span>Client</span>ThemeArt</div>
+                                                <div><span>Date</span>January 21, 2015</div>
+                                                <div><span>Categories</span>Identity / Web</div>
+                                                <div><span>Link</span><a href="http://themeart.co/">http://themeart.co/</a>
+                                                </div>
+                                            </div>
+                                            <p>We need to give each other the space to grow, to be ourselves, to exercise our diversity. We need to give each other space so that we may both give and receive such beautiful things as ideas, openness, dignity, joy, healing, and inclusion.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End details for portfolio project -->
+
+
+                        <div id="slidingDiv1401" class="toggleDiv single-project">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/Portfolio04.png" alt="project">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="project-description">
+                                            <div class="project-title clearfix">
+                                                <h3>Realistic Character 4</h3>
+                                                <span class="show_hide close">
+											<i class="icon-cancel"></i>
+										</span>
+                                            </div>
+                                            <div class="project-info">
+                                                <div><span>Client</span>ThemeArt</div>
+                                                <div><span>Date</span>January 21, 2015</div>
+                                                <div><span>Categories</span>Identity / Photo / Web</div>
+                                                <div><span>Link</span><a href="http://themeart.co/">http://themeart.co/</a>
+                                                </div>
+                                            </div>
+                                            <p>Life&#8217;s but a walking shadow, a poor player, that struts and frets his hour upon the stage, and then is heard no more; it is a tale told by an idiot, full of sound and fury, signifying nothing.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End details for portfolio project -->
+
+
+                        <div id="slidingDiv1399" class="toggleDiv single-project">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/Portfolio03.png" alt="project">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="project-description">
+                                            <div class="project-title clearfix">
+                                                <h3>Realistic Character 3</h3>
+                                                <span class="show_hide close">
+											<i class="icon-cancel"></i>
+										</span>
+                                            </div>
+                                            <div class="project-info">
+                                                <div><span>Client</span>ThemeArt</div>
+                                                <div><span>Date</span>January 21, 2015</div>
+                                                <div><span>Categories</span>Identity / Photo</div>
+                                                <div><span>Link</span><a href="http://themeart.co/">http://themeart.co/</a>
+                                                </div>
+                                            </div>
+                                            <p>How far you go in life depends on your being tender with the young, compassionate with the aged, sympathetic with the striving and tolerant of the weak and strong. Because someday in your life you will have been all of these.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End details for portfolio project -->
+
+
+                        <div id="slidingDiv1393" class="toggleDiv single-project">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/Portfolio02.png" alt="project">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="project-description">
+                                            <div class="project-title clearfix">
+                                                <h3>Realistic Character 2</h3>
+                                                <span class="show_hide close">
+											<i class="icon-cancel"></i>
+										</span>
+                                            </div>
+                                            <div class="project-info">
+                                                <div><span>Client</span>ThemeArt</div>
+                                                <div><span>Date</span>January 21, 2015</div>
+                                                <div><span>Categories</span>Identity / Web</div>
+                                                <div><span>Link</span><a href="http://themeart.co/">http://themeart.co/</a>
+                                                </div>
+                                            </div>
+                                            <p>Life is a song &#8211; sing it. Life is a game &#8211; play it. Life is a challenge &#8211; meet it. Life is a dream &#8211; realize it. Life is a sacrifice &#8211; offer it. Life is love &#8211; enjoy it.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End details for portfolio project -->
+
+
+                        <div id="slidingDiv1391" class="toggleDiv single-project">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/Portfolio01.png" alt="project">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="project-description">
+                                            <div class="project-title clearfix">
+                                                <h3>Realistic Character 1</h3>
+                                                <span class="show_hide close">
+											<i class="icon-cancel"></i>
+										</span>
+                                            </div>
+                                            <div class="project-info">
+                                                <div><span>Client</span>ThemeArt</div>
+                                                <div><span>Date</span>January 21, 2015</div>
+                                                <div><span>Categories</span>Photo / Web</div>
+                                                <div><span>Link</span><a href="http://themeart.co/">http://themeart.co/</a>
+                                                </div>
+                                            </div>
+                                            <p>Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End details for portfolio project -->
+
+                        <!-- end of the loop -->
 
 
 
+                        <ul id="portfolio-grid" class="thumbnails row">
 
 
+                            <!-- the loop -->
+
+                            <li class="col-sm-6 col-md-4 mix identity photo">
+                                <div class="thumbnail">
+                                    <img src="img/Portfolio09.png" alt="project">
+                                    <a href="#single-project" class="more show_hide" rel="#slidingDiv1411">
+                                        <i class="icon-plus"></i>
+                                    </a>
+                                    <h3>Realistic Character 9</h3>
+                                    <p>Identity / Photo</p>
+                                    <div class="mask"></div>
+                                </div>
+                            </li>
+
+                            <li class="col-sm-6 col-md-4 mix photo web">
+                                <div class="thumbnail">
+                                    <!--<img src="http://pluton.themeart.co/wp-content/uploads/2015/01/Portfolio08.png" alt="project">-->
+                                    <img src="img/Portfolio09.png">
+                                    <a href="#single-project" class="more show_hide" rel="#slidingDiv1409">
+                                        <i class="icon-plus"></i>
+                                    </a>
+                                    <h3>Realistic Character 8</h3>
+                                    <p>Photo / Web</p>
+                                    <div class="mask"></div>
+                                </div>
+                            </li>
+
+                            <li class="col-sm-6 col-md-4 mix identity photo web">
+                                <div class="thumbnail">
+                                    <img src="img/Portfolio09.png" alt="project">
+                                    <a href="#single-project" class="more show_hide" rel="#slidingDiv1407">
+                                        <i class="icon-plus"></i>
+                                    </a>
+                                    <h3>Realistic Character 7</h3>
+                                    <p>Identity / Photo / Web</p>
+                                    <div class="mask"></div>
+                                </div>
+                            </li>
+
+                            <li class="col-sm-6 col-md-4 mix photo web">
+                                <div class="thumbnail">
+                                    <img src="img/Portfolio09.png" alt="project">
+                                    <a href="#single-project" class="more show_hide" rel="#slidingDiv1405">
+                                        <i class="icon-plus"></i>
+                                    </a>
+                                    <h3>Realistic Character 6</h3>
+                                    <p>Photo / Web</p>
+                                    <div class="mask"></div>
+                                </div>
+                            </li>
+
+                            <li class="col-sm-6 col-md-4 mix identity web">
+                                <div class="thumbnail">
+                                    <img src="img/Portfolio09.png" alt="project">
+                                    <a href="#single-project" class="more show_hide" rel="#slidingDiv1403">
+                                        <i class="icon-plus"></i>
+                                    </a>
+                                    <h3>Realistic Character 5</h3>
+                                    <p>Identity / Web</p>
+                                    <div class="mask"></div>
+                                </div>
+                            </li>
+
+                            <li class="col-sm-6 col-md-4 mix identity photo web">
+                                <div class="thumbnail">
+                                    <img src="img/Portfolio09.png" alt="project">
+                                    <a href="#single-project" class="more show_hide" rel="#slidingDiv1401">
+                                        <i class="icon-plus"></i>
+                                    </a>
+                                    <h3>Realistic Character 4</h3>
+                                    <p>Identity / Photo / Web</p>
+                                    <div class="mask"></div>
+                                </div>
+                            </li>
+
+                            <li class="col-sm-6 col-md-4 mix identity photo">
+                                <div class="thumbnail">
+                                    <img src="img/Portfolio09.png" alt="project">
+                                    <a href="#single-project" class="more show_hide" rel="#slidingDiv1399">
+                                        <i class="icon-plus"></i>
+                                    </a>
+                                    <h3>Realistic Character 3</h3>
+                                    <p>Identity / Photo</p>
+                                    <div class="mask"></div>
+                                </div>
+                            </li>
+
+                            <li class="col-sm-6 col-md-4 mix identity web">
+                                <div class="thumbnail">
+                                    <img src="img/Portfolio09.png" alt="project">
+                                    <a href="#single-project" class="more show_hide" rel="#slidingDiv1393">
+                                        <i class="icon-plus"></i>
+                                    </a>
+                                    <h3>Realistic Character 2</h3>
+                                    <p>Identity / Web</p>
+                                    <div class="mask"></div>
+                                </div>
+                            </li>
+
+                            <li class="col-sm-6 col-md-4 mix photo web">
+                                <div class="thumbnail">
+                                    <img src="img/Portfolio09.png" alt="project">
+                                    <a href="#single-project" class="more show_hide" rel="#slidingDiv1391">
+                                        <i class="icon-plus"></i>
+                                    </a>
+                                    <h3>Realistic Character 1</h3>
+                                    <p>Photo / Web</p>
+                                    <div class="mask"></div>
+                                </div>
+                            </li>
+                            <!-- end of the loop -->
 
 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Portfolio section end -->
 
+            <!-- About us section start -->
+            <div class="section primary-section" id="about">
+                <div class="triangle"></div>
+                <div class="container">
+                    <div class="title">
+                        <h1>Who We Are?</h1>
+                        <p>Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.</p>
+                    </div>
+                    <div class="row team">
+                        <!-- Loop slide -->
+                        <div class="col-sm-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/Team1.png" alt="team member">
+                                <h3>John Doe</h3>
+                                <ul class="social">
+                                    <li>
+                                        <a href="http://themeart.co/">
+                                            <span class="icon-facebook-squared"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://themeart.co/">
+                                            <span class="icon-twitter-squared"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://themeart.co/">
+                                            <span class="icon-linkedin-squared"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="mask">
+                                    <h2>Copywriter</h2>
+                                    <p>When you stop expecting people to be perfect, you can like them for who they are.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/Team2.png" alt="team member">
+                                <h3>John Doe</h3>
+                                <ul class="social">
+                                    <li>
+                                        <a href="http://themeart.co/">
+                                            <span class="icon-facebook-squared"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://themeart.co/">
+                                            <span class="icon-twitter-squared"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://themeart.co/">
+                                            <span class="icon-linkedin-squared"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="mask">
+                                    <h2>Designer</h2>
+                                    <p>When you stop expecting people to be perfect, you can like them for who they are.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/Team3.png" alt="team member">
+                                <h3>John Doe</h3>
+                                <ul class="social">
+                                    <li>
+                                        <a href="http://themeart.co/">
+                                            <span class="icon-facebook-squared"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://themeart.co/">
+                                            <span class="icon-twitter-squared"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://themeart.co/">
+                                            <span class="icon-linkedin-squared"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="mask">
+                                    <h2>Photographer</h2>
+                                    <p>When you stop expecting people to be perfect, you can like them for who they are.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End loop slide -->
+                    </div>
+                    <h3 class="skill-title">Skills</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="skills">
+                                <!-- Loop slide -->
+                                <li>
+                                    <span class="bar" data-width="93%"></span>
+                                    <h3> Graphic Design</h3>
+                                </li>
+                                <li>
+                                    <span class="bar" data-width="95%"></span>
+                                    <h3>HTML & CSS</h3>
+                                </li>
+                                <li>
+                                    <span class="bar" data-width="88%"></span>
+                                    <h3>PHP</h3>
+                                </li>
+                                <li>
+                                    <span class="bar" data-width="80%"></span>
+                                    <h3>jQuery</h3>
+                                </li>
+                                <li>
+                                    <span class="bar" data-width="90%"></span>
+                                    <h3>WordPress</h3>
+                                </li>
+                                <!-- End loop slide -->
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="highlighted-box center">
+                                <h1>About Us</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diamnonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- About us section end -->
+
+            <!-- Call to action section start -->
+            <div id="call-to-action">
+                <div class="section secondary-section">
+                    <div class="triangle"></div>
+                    <div class="container centered">
+                        <p class="large-text">TA Pluton is a modern one page WordPress theme with parallax scrolling effect.</p>
+                        <a href="http://themeart.co/free-theme/ta-pluton/" class="button">Download Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Call to action section end -->
+
+            <!-- Client section start -->
+            <div id="client">
+                <div class="section primary-section">
+                    <div class="triangle"></div>
+                    <div class="container">
+                        <div class="title">
+                            <h1>What Client Say?</h1>
+                            <p>Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.</p>
+                        </div>
+                        <div class="row">
+                            <!-- Loop slide -->
+                            <div class="col-sm-4 col-md-4">
+                                <div class="testimonial">
+                                    <p>"I\'ve worked too hard and too long to let anything stand in the way of my goals. I will not let my teammates down and I will not let myself down."</p>
+                                    <div class="whopic">
+                                        <div class="arrow"></div>
+                                        <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/Client1.png" class="centered" alt="client">
+                                        <strong>John Doe										<small>Client</small>
+									</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-md-4">
+                                <div class="testimonial">
+                                    <p>"In motivating people, you\'ve got to engage their minds and their hearts. I motivate people, I hope, by example - and perhaps by excitement, by having productive ideas to make others feel involved."</p>
+                                    <div class="whopic">
+                                        <div class="arrow"></div>
+                                        <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/Client2.png" class="centered" alt="client">
+                                        <strong>John Doe										<small>Client</small>
+									</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-md-4">
+                                <div class="testimonial">
+                                    <p>"Determine never to be idle. No person will have occasion to complain of the want of time who never loses any. It is wonderful how much may be done if we are always doing."</p>
+                                    <div class="whopic">
+                                        <div class="arrow"></div>
+                                        <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/Client3.png" class="centered" alt="client">
+                                        <strong>John Doe										<small>Client</small>
+									</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End loop slide -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section third-section client-bg">
+                    <div class="container centered">
+                        <div class="sub-section">
+                            <div class="title clearfix">
+                                <div class="pull-left">
+                                    <h3>Our Clients</h3>
+                                </div>
+                                <ul class="client-nav pull-right">
+                                    <li id="client-prev"></li>
+                                    <li id="client-next"></li>
+                                </ul>
+                            </div>
+                            <ul class="row client-slider" id="client-slider">
+                                <!-- Loop slide -->
+                                <li>
+                                    <a href="http://themeart.co/">
+                                        <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/ClientLogo01.png" alt="ThemeArt">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://themeart.co/">
+                                        <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/ClientLogo02.png" alt="ThemeArt">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://themeart.co/">
+                                        <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/ClientLogo03.png" alt="ThemeArt">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://themeart.co/">
+                                        <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/ClientLogo04.png" alt="ThemeArt">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://themeart.co/">
+                                        <img src="http://pluton.themeart.co/wp-content/uploads/2015/01/ClientLogo05.png" alt="ThemeArt">
+                                    </a>
+                                </li>
+                                <!-- End loop slide -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Client section end -->
+
+            <!-- Blog section start -->
+            <div id="blog" class="section secondary-section">
+                <div class="container">
+                    <div class="title">
+                        <h1>Blog</h1>
+                        <p>Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.</p>
+                    </div>
+
+                    <div class="blog-list row">
+                        <div class="col-md-12">
+                            <ul class="timeline">
+                                <li>
+                                    <div class="timeline-image">
+                                        <a href="http://pluton.themeart.co/markup-and-formatting/" title="Markup And Formatting">
+                                            <img width="200" height="200" src="http://pluton.themeart.co/wp-content/uploads/2013/03/cabin-200x200.png" class="img-circle wp-post-image" alt="cabin" />
+                                        </a>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <span>January 11, 2013</span>
+                                            <h3 class="subheading"><a href="http://pluton.themeart.co/markup-and-formatting/" title="Markup And Formatting">Markup And Formatting</a></h3>
+                                        </div>
+                                        <div class="timeline-body">
+                                            Headings Header one Header two Header three Header four Header five Header six Blockquotes Single line blockquote: Stay hungry. Stay foolish. Multi line blockquote with a cite reference: People think&hellip;</div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-image">
+                                        <a href="http://pluton.themeart.co/image-alignment/" title="Image Alignment">
+                                            <img width="200" height="200" src="http://pluton.themeart.co/wp-content/uploads/2013/01/cake-200x200.png" class="img-circle wp-post-image" alt="cake" />
+                                        </a>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <span>January 10, 2013</span>
+                                            <h3 class="subheading"><a href="http://pluton.themeart.co/image-alignment/" title="Image Alignment">Image Alignment</a></h3>
+                                        </div>
+                                        <div class="timeline-body">
+                                            Welcome to image alignment! The best way to demonstrate the ebb and flow of the various image positioning options is to nestle them snuggly among an ocean of words. Grab&hellip;</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="timeline-image">
+                                        <a href="http://pluton.themeart.co/text-alignment/" title="Text Alignment">
+                                            <img width="200" height="200" src="http://pluton.themeart.co/wp-content/uploads/2013/01/circus-200x200.png" class="img-circle wp-post-image" alt="circus" />
+                                        </a>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <span>January 9, 2013</span>
+                                            <h3 class="subheading"><a href="http://pluton.themeart.co/text-alignment/" title="Text Alignment">Text Alignment</a></h3>
+                                        </div>
+                                        <div class="timeline-body">
+                                            Default This is a paragraph. It should not have any alignment of any kind. It should just flow like you would normally expect. Nothing fancy. Just straight up text, free&hellip;</div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-image">
+                                        <a href="http://pluton.themeart.co/sticky/" title="Sticky">
+                                            <img width="200" height="200" src="http://pluton.themeart.co/wp-content/uploads/2013/01/game-200x200.png" class="img-circle wp-post-image" alt="game" />
+                                        </a>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <span>January 7, 2013</span>
+                                            <h3 class="subheading"><a href="http://pluton.themeart.co/sticky/" title="Sticky">Sticky</a></h3>
+                                        </div>
+                                        <div class="timeline-body">
+                                            This is a sticky post. There are a few things to verify: The sticky post should be distinctly recognizable in some way in comparison to normal posts. You can style the .sticky&hellip;</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p class="centered"><a href="http://pluton.themeart.co/blogpage/" class="button">More Posts</a>
+                    </p>
+                </div>
+            </div>
+            <!-- Blog section end -->
+
+            <!-- Newsletter section start -->
+            <div class="section third-section newsletter-bg">
+                <div class="container newsletter">
+                    <div class="sub-section">
+                        <div class="title clearfix">
+                            <div class="pull-left">
+                                <h3>Newsletter</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="success-subscribe" class="alert alert-success invisible">
+                        <strong>Well done!</strong> You successfully subscribe to our newsletter.</div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <form class="form-inline" method="post" id="subscribe">
+                                <input type="email" name="subscribe-email" id="subscribe-email" class="col-xs-12 col-sm-6 col-md-7 col-lg-8" placeholder="Enter your email" value="">
+                                <button class="button button-sp">Subscribe</button>
+                            </form>
+                            <div id="err-subscribe" class="error centered">Please provide valid email address.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Newsletter section end -->
+
+            <!-- Contact section start -->
+            <div id="contact" class="contact">
+                <div class="section secondary-section">
+                    <div class="container">
+                        <div class="title">
+                            <h1>Contact Us</h1>
+                            <p>Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.</p>
+                        </div>
+                    </div>
+                    <div class="map-wrapper">
+                        <div class="map-canvas" id="map-canvas">Loading map...</div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 contact-form">
+                                    <h3>Say Hello</h3>
+                                    <div id="successSend" class="alert alert-success invisible">
+                                        <strong>Well done!</strong> Your message has been sent.</div>
+                                    <div id="errorSend" class="alert alert-error invisible">There was an error.</div>
+                                    <form id="contact-form" action="http://pluton.themeart.co/wp-content/themes/ta-pluton/inc/contact-us.php">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" id="name" name="name" placeholder="* Your name..." />
+                                            <div class="error left-align" id="err-name">Please enter name.</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" type="email" name="email" id="email" placeholder="* Your email..." />
+                                            <div class="error left-align" id="err-email">Please enter valid email address.</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control" name="comment" id="comment" placeholder="* Comments..."></textarea>
+                                            <div class="error left-align" id="err-comment">Please enter your comment.</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button id="send-mail" class="message-btn">Send message</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="col-md-9 center contact-info">
+                            <p><i class="icon-phone"></i>+01 234 567 890</p>
+                            <p class="info-address"><i class="icon-location"></i>1600 Amphitheatre Parkway Mountain View, CA 94043</p>
+                            <div class="title">
+                                <h3>We Are Social</h3>
+                            </div>
+                        </div>
+                        <div class="row centered">
+                            <ul class="social">
+                                <li>
+                                    <a href="http://themeart.co/">
+                                        <span class="icon-facebook-squared"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://themeart.co/">
+                                        <span class="icon-twitter-squared"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://themeart.co/">
+                                        <span class="icon-linkedin-squared"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://themeart.co/">
+                                        <span class="icon-pinterest-squared"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://themeart.co/">
+                                        <span class="icon-dribbble"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://themeart.co/">
+                                        <span class="icon-youtube-squared"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://themeart.co/">
+                                        <span class="icon-gplus-squared"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contact section end -->
 
             <!-- ScrollUp button start -->
             <div class="scrollup">
                 <a href="#">
-                    <i class="icon-up-open"></i>
+                    <i class="fa fa-arrow-up"></i>
                 </a>
             </div>
             <!-- ScrollUp button end -->
