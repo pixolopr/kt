@@ -570,7 +570,7 @@ select:focus:invalid:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #181a1c;
+    background: white;
     position: absolute;
     -webkit-transition: all 0.2s ease-out;
        -moz-transition: all 0.2s ease-out;
