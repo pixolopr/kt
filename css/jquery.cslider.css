@@ -82,8 +82,9 @@
 }
 .da-slide h2 {
     font-size: 33px;
-    width: 50%;
-    top: 120px;
+    width: 55%;
+    top: 50%;
+    transform: translateY(-50%);
     font-weight:bold;
 }
 
