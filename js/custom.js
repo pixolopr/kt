@@ -15,12 +15,7 @@ $(document).ready(function () {
      $(window).load(function () {
         var $container = $('#portfolio-div');
         $container.isotope({
-            filter: '*',
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-            }
+            filter: '*'
         });
         $('.caegories a').click(function () {
             $('.caegories .active').removeClass('active');
