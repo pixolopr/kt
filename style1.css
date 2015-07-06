@@ -297,7 +297,7 @@ select:focus:invalid:focus {
 .large-text {
     line-height: 1.2em;
     font-size: 30px;
-    color: #181a1c !important;
+    color:  #f4f8f9 !important;
     padding: 20px;
     margin-bottom: 20px;
 }
@@ -339,11 +339,23 @@ select:focus:invalid:focus {
     text-align: center;
     width: 0;
     height: 0;
-    border-top: 30px solid #181a1c;
+    border-top: 30px solid #181A1C;
     border-left: 585px outset transparent;
     border-right: 585px outset transparent;
     position: relative;
 }
+ .triangle2
+{
+margin: 0 auto;
+    text-align: center;
+    width: 0;
+    height: 0;
+   
+border-top: 40px solid #049372;
+    border-left: 585px outset transparent;
+    border-right: 585px outset transparent;
+    position: relative;};
+
 /*--------------------------------------------------------------
 3.1 Animations
 --------------------------------------------------------------*/
@@ -639,8 +651,9 @@ h6 {
 }
 
 .primary-section .triangle {
-    border-top: 40px solid #ffce1a;
+    border-top: 40px solid #181A1C;
 }
+
 
 .primary-section .title {
     border-bottom: 1px solid #fff;
@@ -649,7 +662,7 @@ h6 {
 .primary-section,
 .primary-section h3,
 .primary-section .title p {
-    color: #fece1a;
+    color: ##181A1C;
 }
 
 .primary-section h1 {
@@ -657,7 +670,7 @@ h6 {
 }
 
 .secondary-section {
-    background: #fece1a;
+    background: #181A1C;
 }
 
 .secondary-section .title {
@@ -672,7 +685,7 @@ h6 {
 .third-section {
     padding-bottom: 70px;
     background: #181a1c;
-    border-top: 6px solid #fece1a;
+    border-top: 6px solid #039271;
 }
 
 .third-section .container {
@@ -682,7 +695,7 @@ h6 {
 
 .third-section .title {
     border-bottom: 1px solid #a1aab7;
-    color: #fece1a;
+    color: #039271;
 }
 
 .sub-section {
@@ -872,13 +885,13 @@ h6 {
     margin: 0;
     left: 10px;
     z-index: 1;
-    color: #181a1c;
+    color: #fff;
 }
 
 .skills li .bar {
     height: 38px;
     position: absolute;
-    background-color: #fece1a;
+    background-color: #181A1C;
 }
 /*--------------------------------------------------------------
 6.6 Call to Action
@@ -896,7 +909,7 @@ h6 {
 }
 
 .client-slider img:hover {
-    background-color: #fece1a;
+    background-color: #039271;
 }
 
 .client-nav {
@@ -913,17 +926,17 @@ h6 {
 .client-nav li a {
     display: inherit;
     padding: 6px 3px 5px 5px;
-    background: #fece1a;
+    background: #039271;
     border-radius: 3px;
 }
 
 .client-nav li a:hover {
-    background: #181a1c;
+    background: ;
 }
 
 .testimonial p {
     color: #181a1c;
-    background: #fece1a;
+    background: #049372;
     padding: 15px;
     margin: 0;
 }
@@ -931,7 +944,7 @@ h6 {
 .testimonial .arrow {
     margin-left: 10px;
     width: 0;
-    border-top: 10px solid #fece1a;
+    border-top: 10px solid #039271;
     border-left: 20px outset transparent;
     border-right: 20px outset transparent;
 }
@@ -1143,7 +1156,7 @@ h6 {
 .contact h6,
 .contact .social>li>a,
 .contact .section .title>p {
-    color: #181a1c;
+    color: #FFFFFF;
 }
 
 .contact textarea,
@@ -1426,7 +1439,7 @@ ol.comment-list {
 }
 
 .footer a {
-    color: #fece1a;
+    color: #D91E18;
 }
 
 .footer>p {
@@ -1444,11 +1457,11 @@ ol.comment-list {
     border-radius: 5px;
     font-size: 20px;
     position: fixed;
-    bottom: 30px;
+    bottom: 43px;
     right: 20px;
     border: 1px solid #fff;
     display: none;
-    background: #ffce1a;
+  
 }
 
 .scrollup>a {
@@ -1766,7 +1779,6 @@ img {
 
 .hashsilder {
     width: 300px;
-    margin-top: 8%;
     -webkit-transform: rotate(-30deg);
     -ms-transform: rotate(-30deg);
     -o-transform: rotate(-30deg);
@@ -1861,4 +1873,20 @@ img {
     width: 338px;
     margin-top: 40%;
     margin-left: 68%;
+}
+
+@font-face {
+    font-family: beer;
+    src: url(fonts/beermoney.ttf);
+}
+
+.font
+{  font-family: beer;
+  color: white;
+  font-size: 240%;
+ 
+}
+.redbackground
+{
+  background: #d91e18 !important;
 }
