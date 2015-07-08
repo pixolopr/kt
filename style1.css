@@ -909,7 +909,7 @@ h6 {
 }
 
 .client-slider img:hover {
-    background-color: #039271;
+   background-color: rgba(192, 201, 199, 0.68);
 }
 
 .client-nav {
